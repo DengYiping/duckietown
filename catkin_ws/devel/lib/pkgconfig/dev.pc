@@ -1,0 +1,8 @@
+prefix=/ros/catkin_ws/devel
+
+Name: dev
+Description: Description of dev
+Version: 0.0.0
+Cflags: 
+Libs: -L/ros/catkin_ws/devel/lib 
+Requires: 
