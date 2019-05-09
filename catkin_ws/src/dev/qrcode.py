@@ -23,8 +23,11 @@ import numpy as np
 # Instantiate CvBridge
 bridge = CvBridge()
 
+# duckie setup
+
+DUCKIE = 'duckie1'
+
 def image_callback(msg):
-    print("Received an image!")
     try:
         # Convert your ROS Image message to OpenCV2
         cv2_img = bridge.imgmsg_to_cv2(msg, "bgr8")
@@ -44,7 +47,7 @@ def image_callback(msg):
 def main():
     rospy.init_node('image_listener')
     # Define your image topic
-    image_topic = "/webcam/image_raw"
+    image_topic = '/' + DUCKIE + '/decoder_node/image/compressed'
     # Set up your subscriber and define its callback
     rospy.Subscriber(image_topic, Image, image_callback)
     # Spin until ctrl + c
